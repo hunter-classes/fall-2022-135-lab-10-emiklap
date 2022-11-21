@@ -9,9 +9,14 @@ Time t3 = {23, 18};
 
 TEST_CASE("TASK A: minutesSinceMidnight()") {
     CHECK(minutesSinceMidnight(t0) == 0);
+    CHECK(minutesSinceMidnight(t1) == 71);
+    CHECK(minutesSinceMidnight(t2) == 839);
+    CHECK(minutesSinceMidnight(t3) == 1398);
 }
 
 TEST_CASE("TASK A: minutesUntil()") {
     CHECK(minutesUntil(t0, t1) == 71);
     CHECK(minutesUntil(t1, t0) == -71);
+    CHECK(minutesUntil(t1, t2) == 768);
+    CHECK(minutesUntil(t2, t3) == 559);
 }
