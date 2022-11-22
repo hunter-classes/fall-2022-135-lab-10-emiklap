@@ -20,3 +20,12 @@ TEST_CASE("TASK A: minutesUntil()") {
     CHECK(minutesUntil(t1, t2) == 768);
     CHECK(minutesUntil(t2, t3) == 559);
 }
+
+TEST_CASE("TASK B: addMinutes()") {
+    Time test_example = {9, 25};
+    Time t1_ver1 = {1, 22}; // + 11 mins
+    Time t1_ver2 = {3, 13}; // + 2 hours and 2 mins
+    CHECK(addMinutes(t1, 11) == t1_ver1);
+    CHECK(addMinutes(t1, 122) == t1_ver2);
+    CHECK(addMinutes({8, 10}, 75) == test_example);
+}
