@@ -1,11 +1,14 @@
 #include <iostream>
 #include <iomanip>
+#include <sstream>
 #include "time.h"
 #include "movie.h"
 #include "timeslot.h"
 
-void printTime(Time time) {
-    std::cout << time.h << ":" << std::setw(2) << std::setfill('0') << time.m << std::endl;
+std::string printTime(Time time) {
+    std::stringstream ret_str;
+    ret_str << time.h << ":" << std::setw(2) << std::setfill('0') << time.m;
+    return ret_str.str();
 }
 
 //task A
@@ -39,6 +42,9 @@ std::string getTimeSlot(TimeSlot ts) {
         case ROMANCE  : g = "ROMANCE"; break;
         case THRILLER : g = "THRILLER"; break;
     }
-    std::string ret_str = ts.movie.title + " " + g + " (" + std::__cxx11::to_string(ts.movie.duration) + " min)";
+    Time endTime = addMinutes(ts.startTime , ts.movie.duration );
+
+    std::string ret_str = ts.movie.title + " " + g + " (" + std::__cxx11::to_string(ts.movie.duration) + " min) ";
+    ret_str += "[starts at " + printTime(ts.startTime) + ", ends by " + printTime(endTime) + "]";
     return ret_str;
 }

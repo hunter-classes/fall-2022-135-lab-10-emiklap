@@ -2,7 +2,7 @@
 #include "movie.h"
 #include "timeslot.h"
 
-void printTime(Time time);
+std::string printTime(Time time);
 
 //task A
 int minutesSinceMidnight(Time);
