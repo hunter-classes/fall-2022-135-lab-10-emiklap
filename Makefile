@@ -1,14 +1,14 @@
-main: main.o time.o
-	g++ -o main main.o time.o
+main: main.o funcs.o
+	g++ -o main main.o funcs.o
 
-tests: tests.o time.o
-	g++ -o tests tests.o time.o
+tests: tests.o funcs.o
+	g++ -o tests tests.o funcs.o
 
-time.o: time.cpp time.h
+funcs.o: funcs.cpp funcs.h time.h movie.h timeslot.h
 
-main.o: main.cpp time.h
+main.o: main.cpp funcs.h time.h movie.h timeslot.h
 
-tests.o: tests.cpp doctest.h time.h
+tests.o: tests.cpp doctest.h funcs.h time.h movie.h timeslot.h
 
 clean:
-	rm -f main.o tests.o time.o
+	rm -f main.o tests.o funcs.o
