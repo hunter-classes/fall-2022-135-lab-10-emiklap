@@ -48,3 +48,11 @@ std::string getTimeSlot(TimeSlot ts) {
     ret_str += "[starts at " + printTime(ts.startTime) + ", ends by " + printTime(endTime) + "]";
     return ret_str;
 }
+
+//task D
+TimeSlot scheduleAfter(TimeSlot ts, Movie nextMovie) {
+    Time newTime = addMinutes(ts.startTime, ts.movie.duration);
+    TimeSlot newTS = {nextMovie, newTime};
+
+    return newTS;
+}

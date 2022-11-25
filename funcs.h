@@ -13,3 +13,7 @@ Time addMinutes(Time, int);
 
 //task C
 std::string getTimeSlot(TimeSlot);
+
+//task D
+TimeSlot scheduleAfter(TimeSlot ts, Movie nextMovie);
+

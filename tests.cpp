@@ -46,3 +46,12 @@ TEST_CASE("TASK C: getTimeSlot()") {
     CHECK(getTimeSlot(daytime) == "Black Panther ACTION (134 min) [starts at 12:15, ends by 14:29]");
     CHECK(getTimeSlot(evening) == "Black Panther ACTION (134 min) [starts at 16:45, ends by 18:59]");
 }
+
+TEST_CASE("TASK D: scheduleAfter()") {
+    TimeSlot morning1 = {movie1, {11, 11}};
+    TimeSlot daytime1 = {movie2, {14, 29}};
+    TimeSlot evening1 = {movie1, {18, 59}};
+    CHECK(scheduleAfter(morning, movie1) == morning1);
+    CHECK(scheduleAfter(daytime, movie2) == daytime1);
+    CHECK(scheduleAfter(evening, movie1) == evening1);
+}

@@ -35,7 +35,20 @@ int main() {
     std::cout << getTimeSlot(afternoon_sf) << std::endl;
     std::cout << getTimeSlot(evening_sf) << std::endl;
 
-    std::cout << "\n---------------------------" << "\n     DEMO OF TASK  \n" << std::endl;
+    std::cout << "\n---------------------------" << "\n     DEMO OF TASK D " << std::endl;
+    TimeSlot new_morning_eeaao = scheduleAfter(morning_eeaao, eeaao);
+    TimeSlot new_afternoon_eeaao = scheduleAfter(afternoon_eeaao, eeaao);
+    TimeSlot new_evening_eeaao = scheduleAfter(evening_eeaao, eeaao);
+    TimeSlot new_afternoon_sf = scheduleAfter(afternoon_sf, saving_face);
+    TimeSlot new_evening_sf = scheduleAfter(evening_sf, saving_face);
+
+    std::cout << "New timeslot of each of the above: \n" << getTimeSlot(new_morning_eeaao) << std::endl;
+    std::cout << getTimeSlot(new_afternoon_eeaao) << std::endl;
+    std::cout << getTimeSlot(new_evening_eeaao) << std::endl;
+    std::cout << getTimeSlot(new_afternoon_sf) << std::endl;
+    std::cout << getTimeSlot(new_evening_sf) << std::endl;
+
+    std::cout << "\n---------------------------" << "\n     DEMO OF TASK E " << std::endl;
 
     return 0;
 }
