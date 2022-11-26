@@ -56,3 +56,13 @@ TimeSlot scheduleAfter(TimeSlot ts, Movie nextMovie) {
 
     return newTS;
 }
+
+//task E
+bool timeOverlap(TimeSlot ts1, TimeSlot ts2) {
+    Time endingTime1 = addMinutes(ts1.startTime, ts1.movie.duration);
+    if (minutesSinceMidnight(endingTime1) > minutesSinceMidnight(ts2.startTime)) {
+        return true;
+    } else {
+        return false;
+    }
+}

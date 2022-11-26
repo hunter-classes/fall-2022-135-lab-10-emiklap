@@ -29,11 +29,11 @@ int main() {
     TimeSlot evening_sf = {saving_face, {16, 45}};
 
     std::cout << "\n\n---------------------------" << "\n     DEMO OF TASK C" << std::endl;
-    std::cout << getTimeSlot(morning_eeaao) << std::endl;
-    std::cout << getTimeSlot(afternoon_eeaao) << std::endl;
-    std::cout << getTimeSlot(evening_eeaao) << std::endl;
-    std::cout << getTimeSlot(afternoon_sf) << std::endl;
-    std::cout << getTimeSlot(evening_sf) << std::endl;
+    std::cout << "1. " << getTimeSlot(morning_eeaao) << std::endl;
+    std::cout << "2. " << getTimeSlot(afternoon_eeaao) << std::endl;
+    std::cout << "3 . " << getTimeSlot(evening_eeaao) << std::endl;
+    std::cout << "4. " << getTimeSlot(afternoon_sf) << std::endl;
+    std::cout << "5. " << getTimeSlot(evening_sf) << std::endl;
 
     std::cout << "\n---------------------------" << "\n     DEMO OF TASK D " << std::endl;
     TimeSlot new_morning_eeaao = scheduleAfter(morning_eeaao, eeaao);
@@ -42,13 +42,16 @@ int main() {
     TimeSlot new_afternoon_sf = scheduleAfter(afternoon_sf, saving_face);
     TimeSlot new_evening_sf = scheduleAfter(evening_sf, saving_face);
 
-    std::cout << "New timeslot of each of the above: \n" << getTimeSlot(new_morning_eeaao) << std::endl;
-    std::cout << getTimeSlot(new_afternoon_eeaao) << std::endl;
-    std::cout << getTimeSlot(new_evening_eeaao) << std::endl;
-    std::cout << getTimeSlot(new_afternoon_sf) << std::endl;
-    std::cout << getTimeSlot(new_evening_sf) << std::endl;
+    std::cout << "New timeslot of each of the above: \n6. " << getTimeSlot(new_morning_eeaao) << std::endl;
+    std::cout << "7. " << getTimeSlot(new_afternoon_eeaao) << std::endl;
+    std::cout << "8. " << getTimeSlot(new_evening_eeaao) << std::endl;
+    std::cout << "9. " << getTimeSlot(new_afternoon_sf) << std::endl;
+    std::cout << "10. " << getTimeSlot(new_evening_sf) << std::endl;
 
     std::cout << "\n---------------------------" << "\n     DEMO OF TASK E " << std::endl;
+    std::cout << "Overlap between #2 and #9? " << timeOverlap(afternoon_eeaao, new_afternoon_sf) << std::endl;
+    std::cout << "Overlap between #1 and #5? " << timeOverlap(morning_eeaao, evening_sf) << std::endl;
+    std::cout << "Overlap between #1 and #6? " << timeOverlap(morning_eeaao, new_morning_eeaao) << "\n\n";
 
     return 0;
 }

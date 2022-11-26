@@ -40,6 +40,10 @@ TimeSlot morning = {movie1, {9, 15}};
 TimeSlot daytime = {movie2, {12, 15}};
 TimeSlot evening = {movie2, {16, 45}};
 
+TimeSlot morning1 = {movie1, {11, 11}};
+TimeSlot daytime1 = {movie2, {14, 29}};
+TimeSlot evening1 = {movie1, {18, 59}};
+
 //these test cases were taken from the lab 10 instruction site
 TEST_CASE("TASK C: getTimeSlot()") {
     CHECK(getTimeSlot(morning) == "Back to the Future COMEDY (116 min) [starts at 9:15, ends by 11:11]");
@@ -48,10 +52,13 @@ TEST_CASE("TASK C: getTimeSlot()") {
 }
 
 TEST_CASE("TASK D: scheduleAfter()") {
-    TimeSlot morning1 = {movie1, {11, 11}};
-    TimeSlot daytime1 = {movie2, {14, 29}};
-    TimeSlot evening1 = {movie1, {18, 59}};
     CHECK(scheduleAfter(morning, movie1) == morning1);
     CHECK(scheduleAfter(daytime, movie2) == daytime1);
     CHECK(scheduleAfter(evening, movie1) == evening1);
+}
+
+TEST_CASE("TASK E: timeOverlap()") {
+    CHECK(timeOverlap(morning, morning1) == 0);
+    CHECK(timeOverlap(morning, daytime) == 0);
+    CHECK(timeOverlap(morning1, daytime) == 1);
 }

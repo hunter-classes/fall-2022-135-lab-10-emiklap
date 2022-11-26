@@ -17,3 +17,5 @@ std::string getTimeSlot(TimeSlot);
 //task D
 TimeSlot scheduleAfter(TimeSlot ts, Movie nextMovie);
 
+//task E
+bool timeOverlap(TimeSlot ts1, TimeSlot ts2);
